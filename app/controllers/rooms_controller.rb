@@ -13,6 +13,7 @@ class RoomsController < ApplicationController
   # GET /rooms/new
   def new
     @room = Room.new
+    @room.stations.build
   end
 
   # GET /rooms/1/edit
@@ -53,6 +54,12 @@ class RoomsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def room_params
-      params.require(:room).permit(:name, :rent, :address, :age, :comment)
+      params.require(:room)
+      .permit(
+        :name, :rent, :address, :age, :comment,
+        stations_attributes: [
+          :name, :route, :distance, :id
+        ]
+      )
     end
 end
