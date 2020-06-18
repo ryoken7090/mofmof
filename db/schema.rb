@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_021204) do
+ActiveRecord::Schema.define(version: 2020_06_18_041503) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
-    t.integer "rent"
+    t.string "rent"
     t.text "address"
-    t.integer "age"
+    t.string "age"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
