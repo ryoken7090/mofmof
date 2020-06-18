@@ -2,7 +2,6 @@
   <% if room.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
-
       <ul>
       <% room.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,6 +11,26 @@
   <% end %>
 
   <div class="actions">
+    <div class="form-group">
+      <%= form.label :建物名 %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="form-group">
+      <%= form.label :家賃（円） %>
+      <%= form.text_field :rent %>
+    </div>
+    <div class="form-group">
+      <%= form.label :住所 %>
+      <%= form.text_field :address %>
+    </div>
+    <div class="form-group">
+      <%= form.label :築年数（年） %>
+      <%= form.text_field :age %>
+    </div>
+    <div class="form-group">
+      <%= form.label :備考 %>
+      <%= form.text_field :comment %>
+    </div>
     <%= form.submit %>
   </div>
 <% end %>

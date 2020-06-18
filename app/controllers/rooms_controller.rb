@@ -53,6 +53,6 @@ class RoomsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def room_params
-      params.fetch(:room, {})
+      params.require(:room).permit(:name, :rent, :address, :age, :comment)
     end
 end
