@@ -46,7 +46,12 @@
       <%= f.label :駅までの距離 %>
       <%= f.text_field :distance %>
     </div>
-
+    <% if f.object.persisted? %>
+      <div class="form-group">
+        <%= f.label :この駅の情報を消去する %>
+        <%= f.check_box :_destroy %>
+      </div>
+    <% end %>
   <% end %>
     <%= form.submit %>
   </div>

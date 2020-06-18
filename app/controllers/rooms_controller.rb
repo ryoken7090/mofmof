@@ -29,6 +29,7 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to @room, notice: 'Room was successfully created.'
     else
+      @room.stations.build
       render :new
     end
   end
@@ -64,7 +65,7 @@ class RoomsController < ApplicationController
       .permit(
         :name, :rent, :address, :age, :comment,
         stations_attributes: [
-          :name, :route, :distance, :id
+          :name, :route, :distance, :id, :_destroy
         ]
       )
     end

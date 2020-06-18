@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rooms</h1>
+<h1>物件一覧</h1>
 
 <table>
   <thead>
@@ -24,7 +24,7 @@
         <td><%= room.comment %></td>
         <td><%= link_to 'Show', room %></td>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: '消去していいですか?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Room', new_room_path %>
+<%= link_to '物件を登録', new_room_path %>

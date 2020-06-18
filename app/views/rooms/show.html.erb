@@ -17,8 +17,9 @@
 <div>
   歩いて行ける駅の数: <%= @room.stations.count %>駅
 </div>
-<p>---------------</p>
+
 <% @room.stations.each do |station| %>
+<p>---------------</p>
   <div>
     最寄り駅:<%= station.name %>
   </div>
