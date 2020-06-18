@@ -3,15 +3,19 @@
   物件名:<%= @room.name %>
 </div>
 <div>
-  家賃:<%= @room.rent %>円
+  家賃:<%= @room.rent %>
 </div>
 <div>
   住所:<%= @room.address %>
 </div>
 <div>
   築年数:<%= @room.age %>
-</div><div>
+</div>
+<div>
   備考:<%= @room.comment %>
+</div>
+<div>
+  歩いて行ける駅の数: <%= @room.stations.count %>駅
 </div>
 <p>---------------</p>
 <% @room.stations.each do |station| %>
