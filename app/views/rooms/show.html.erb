@@ -13,5 +13,17 @@
 </div><div>
   備考:<%= @room.comment %>
 </div>
+<p>---------------</p>
+<% @room.stations.each do |station| %>
+  <div>
+    最寄り駅:<%= station.name %>
+  </div>
+  <div>
+    路線:<%= station.route %>
+  </div>
+  <div>
+    距離:<%= station.distance %>
+  </div>
+<% end %>
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
