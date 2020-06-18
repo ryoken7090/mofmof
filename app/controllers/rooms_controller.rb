@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
+  before_action :set_station, only: [:new, :edit]
 
   # GET /rooms
   def index
@@ -13,7 +14,6 @@ class RoomsController < ApplicationController
   # GET /rooms/new
   def new
     @room = Room.new
-    @room.stations.build
   end
 
   # GET /rooms/1/edit
@@ -50,6 +50,10 @@ class RoomsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_room
       @room = Room.find(params[:id])
+    end
+
+    def set_station
+      @room.stations.build
     end
 
     # Only allow a trusted parameter "white list" through.
