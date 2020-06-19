@@ -7,7 +7,7 @@ ja:
       room:
         name: 名前
         rent: 賃料
-        adress: 住所
+        address: 住所
         age: 築年数
         comment: 備考
       station:
